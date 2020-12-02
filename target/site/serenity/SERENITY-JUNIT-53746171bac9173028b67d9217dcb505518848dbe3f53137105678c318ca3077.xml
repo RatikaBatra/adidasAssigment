@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="Get, Create, update and delete Pets using APIs" skipped="0" tests="1" time="10.47" timestamp="2020-11-18 01:11:26"><testcase name="Get all available pets, create a new pet and update its status to sold and then delete it"/></testsuite>

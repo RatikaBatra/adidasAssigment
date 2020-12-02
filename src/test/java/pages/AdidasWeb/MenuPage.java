@@ -4,9 +4,12 @@ import common.Keywords;
 import net.serenitybdd.core.pages.WebElementFacade;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.FindBy;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class MenuPage extends Keywords {
 
+    Logger logger= LoggerFactory.getLogger("MenuPage.class");
     //String menuOption="//a[contains(text(),'%s')]";
     /*@FindBy(xpath="//a[@class='nav-link']")
     private WebElementFacade menuOption;*/

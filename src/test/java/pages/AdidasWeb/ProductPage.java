@@ -3,8 +3,12 @@ package pages.AdidasWeb;
 import common.Keywords;
 import net.serenitybdd.core.pages.WebElementFacade;
 import org.openqa.selenium.support.FindBy;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class ProductPage extends Keywords {
+
+    Logger logger= LoggerFactory.getLogger("ProductPage.class");
 
     @FindBy(linkText = "Add to cart")
     private WebElementFacade addToCartButton;
@@ -26,6 +30,7 @@ public class ProductPage extends Keywords {
     public void verifyProductInHeader(String product) {
         String formattedProducInHeader=String.format(productInHeader,product);
         verifyVisibility(formattedProducInHeader);
+        logger.info("successfully navigated to correct product page");
     }
 
 }

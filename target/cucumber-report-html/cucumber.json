@@ -3,279 +3,333 @@
     "line": 2,
     "elements": [
       {
-        "start_timestamp": "2020-10-25T19:24:36.044Z",
-        "before": [
-          {
-            "result": {
-              "duration": 6273000000,
-              "status": "passed"
-            },
-            "match": {
-              "location": "common.Hooks.beforeWeb()"
-            }
-          }
-        ],
+        "start_timestamp": "2020-11-17T19:41:26.115Z",
         "line": 22,
-        "name": "Purchase product",
+        "name": "Get all available pets, create a new pet and update its status to sold and then delete it",
         "description": "",
-        "id": "purchase-product;purchase-product;;2",
-        "after": [
-          {
-            "result": {
-              "duration": 4321000000,
-              "status": "passed"
-            },
-            "match": {
-              "location": "common.Hooks.afterWeb()"
-            }
-          }
-        ],
+        "id": "get--create--update-and-delete-pets-using-apis;get-all-available-pets--create-a-new-pet-and-update-its-status-to-sold-and-then-delete-it;;2",
         "type": "scenario",
         "keyword": "Scenario Outline",
         "steps": [
           {
             "result": {
-              "duration": 3398000000,
+              "duration": 4533000000,
               "status": "passed"
             },
             "line": 5,
-            "name": "Customer opens \"https://www.demoblaze.com/index.html\" homepage",
+            "name": "User makes a GET request to get all the pets with \"avaialble\" status",
             "match": {
               "arguments": [
                 {
-                  "val": "https://www.demoblaze.com/index.html",
-                  "offset": 16
+                  "val": "avaialble",
+                  "offset": 51
                 }
               ],
-              "location": "steps.AdidasWeb.BrowseProductsSteps.openLink(java.lang.String)"
+              "location": "steps.AdidasAPIs.GetAPISteps.userMakesAGETRequestToGetAllThePetsWithStatus(java.lang.String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 351000000,
+              "duration": 2000000,
               "status": "passed"
             },
             "line": 6,
-            "name": "Customer clicks on \"Laptops\" product category",
+            "name": "User verify that pet \"PetAddedByRatika\" is not in \"available\" pets list",
             "match": {
               "arguments": [
                 {
-                  "val": "Laptops",
-                  "offset": 20
+                  "val": "PetAddedByRatika",
+                  "offset": 22
                 },
                 {
-                  "val": " category",
-                  "offset": 36
+                  "val": "is not",
+                  "offset": 40
+                },
+                {
+                  "val": "available",
+                  "offset": 51
                 }
               ],
-              "location": "steps.AdidasWeb.BrowseProductsSteps.browseProduct(java.lang.String,java.lang.String)"
+              "location": "steps.AdidasAPIs.GetAPISteps.userVerifyThatPetIsNotInPetsList(java.lang.String,java.lang.String,java.lang.String)"
             },
-            "keyword": "When "
+            "keyword": "And "
           },
           {
             "result": {
-              "duration": 759000000,
+              "duration": 14000000,
               "status": "passed"
             },
             "line": 7,
-            "name": "Customer clicks on \"Sony vaio i5\" product",
+            "name": "User makes a POST request to add a new pet \"PetAddedByRatika\"",
             "match": {
               "arguments": [
                 {
-                  "val": "Sony vaio i5",
-                  "offset": 20
-                },
-                {
-                  "val": "",
-                  "offset": 41
+                  "val": "PetAddedByRatika",
+                  "offset": 44
                 }
               ],
-              "location": "steps.AdidasWeb.BrowseProductsSteps.browseProduct(java.lang.String,java.lang.String)"
+              "location": "steps.AdidasAPIs.PostAPISteps.userMakesAPOSTRequestToAddANewPet(java.lang.String)"
             },
-            "keyword": "And "
+            "keyword": "When "
           },
           {
             "result": {
-              "duration": 8734000000,
+              "duration": 1000000,
               "status": "passed"
             },
             "line": 8,
-            "name": "Customer navigates to the \"Sony vaio i5\" product page",
+            "name": "User verify that pet \"PetAddedByRatika\" is in \"available\" pets list",
             "match": {
               "arguments": [
                 {
-                  "val": "Sony vaio i5",
-                  "offset": 27
+                  "val": "PetAddedByRatika",
+                  "offset": 22
+                },
+                {
+                  "val": "is",
+                  "offset": 40
+                },
+                {
+                  "val": "available",
+                  "offset": 47
                 }
               ],
-              "location": "steps.AdidasWeb.ProductSteps.customerNavigatesToTheProductPage(java.lang.String)"
+              "location": "steps.AdidasAPIs.GetAPISteps.userVerifyThatPetIsNotInPetsList(java.lang.String,java.lang.String,java.lang.String)"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 210000000,
+              "duration": 11000000,
               "status": "passed"
             },
             "line": 9,
-            "name": "Customer adds the products to the cart",
+            "name": "User makes a PUT request to update status of pet \"PetAddedByRatika\" to \"sold\"",
             "match": {
-              "location": "steps.AdidasWeb.ProductSteps.customerAddsTheProductsToTheCart()"
+              "arguments": [
+                {
+                  "val": "PetAddedByRatika",
+                  "offset": 50
+                },
+                {
+                  "val": "sold",
+                  "offset": 72
+                }
+              ],
+              "location": "steps.AdidasAPIs.PutAPISteps.userMakesAPUTRequestToUpdateStatusOfPetTo(java.lang.String,java.lang.String)"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 37000000,
+              "duration": 1422000000,
               "status": "passed"
             },
             "line": 10,
-            "name": "Customer accepts the confirmation alert",
+            "name": "User makes a GET request to get all the pets with \"avaialble\" status",
             "match": {
-              "location": "steps.AdidasWeb.ProductSteps.customerAcceptsTheConfirmationAlert()"
+              "arguments": [
+                {
+                  "val": "avaialble",
+                  "offset": 51
+                }
+              ],
+              "location": "steps.AdidasAPIs.GetAPISteps.userMakesAGETRequestToGetAllThePetsWithStatus(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "User verify that pet \"PetAddedByRatika\" is not in \"available\" pets list",
+            "match": {
+              "arguments": [
+                {
+                  "val": "PetAddedByRatika",
+                  "offset": 22
+                },
+                {
+                  "val": "is not",
+                  "offset": 40
+                },
+                {
+                  "val": "available",
+                  "offset": 51
+                }
+              ],
+              "location": "steps.AdidasAPIs.GetAPISteps.userVerifyThatPetIsNotInPetsList(java.lang.String,java.lang.String,java.lang.String)"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "error_message": "org.openqa.selenium.NoSuchElementException: disconnected: not connected to DevTools\n  (Session info: chrome\u003d86.0.4240.111)\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027DEL1-LHP-N01944\u0027, ip: \u0027172.21.176.17\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_261\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.111, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: D:\\TMP\\scoped_dir47172_9149...}, goog:chromeOptions: {debuggerAddress: localhost:53051}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}\nSession ID: 1c991aa273d8b8fa26d48b08b18f3e35\n*** Element info: {Using\u003dxpath, value\u003d//div[@class\u003d\u0027container\u0027]//a[@class\u003d\u0027nav-link\u0027][contains(text(),\u0027%s\u0027)]}\r\n\tat net.serenitybdd.core.pages.WebElementFacadeImpl.throwNoSuchElementExceptionWithCauseIfPresent(WebElementFacadeImpl.java:1042)\r\n\tat net.serenitybdd.core.pages.WebElementFacadeImpl.checkPresenceOfWebElement(WebElementFacadeImpl.java:1015)\r\n\tat net.serenitybdd.core.pages.WebElementFacadeImpl.waitUntilVisible(WebElementFacadeImpl.java:1022)\r\n\tat common.Keywords.clickElement(Keywords.java:32)\r\n\tat pages.AdidasWeb.MenuPage.clickMenuOption(MenuPage.java:33)\r\n\tat steps.AdidasWeb.MenuSteps.clickOnMenu(MenuSteps.java:12)\r\n\tat ✽.Customer clicks on \"Home\" menu(file:///D:/Ratika/Previous%20Workspaces/non-regression5/AdidasAPIWebAssignment/src/test/resources/features/PurchaseProduct.feature:12)\r\nCaused by: org.openqa.selenium.WebDriverException: disconnected: not connected to DevTools\n  (Session info: chrome\u003d86.0.4240.111)\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027DEL1-LHP-N01944\u0027, ip: \u0027172.21.176.17\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_261\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.111, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: D:\\TMP\\scoped_dir47172_9149...}, goog:chromeOptions: {debuggerAddress: localhost:53051}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}\nSession ID: 1c991aa273d8b8fa26d48b08b18f3e35\n*** Element info: {Using\u003dxpath, value\u003d//div[@class\u003d\u0027container\u0027]//a[@class\u003d\u0027nav-link\u0027][contains(text(),\u0027%s\u0027)]}\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)\r\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:353)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\r\n\tat net.thucydides.core.webdriver.WebDriverFacade.findElement(WebDriverFacade.java:222)\r\n\tat net.serenitybdd.core.pages.WebElementResolverByLocator.resolveForDriver(WebElementResolverByLocator.java:25)\r\n\tat net.serenitybdd.core.pages.WebElementFacadeImpl.getResolvedELement(WebElementFacadeImpl.java:234)\r\n\tat net.serenitybdd.core.pages.WebElementFacadeImpl.getElement(WebElementFacadeImpl.java:229)\r\n\tat net.serenitybdd.core.pages.WebElementFacadeImpl.isVisible(WebElementFacadeImpl.java:449)\r\n\tat net.serenitybdd.core.pages.WebElementFacadeImpl.isCurrentlyVisible(WebElementFacadeImpl.java:498)\r\n\tat net.serenitybdd.core.pages.WebElementExpectations$1.apply(WebElementExpectations.java:23)\r\n\tat net.serenitybdd.core.pages.WebElementExpectations$1.apply(WebElementExpectations.java:15)\r\n\tat org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)\r\n\tat net.serenitybdd.core.pages.WebElementFacadeImpl.checkPresenceOfWebElement(WebElementFacadeImpl.java:1009)\r\n\tat net.serenitybdd.core.pages.WebElementFacadeImpl.waitUntilVisible(WebElementFacadeImpl.java:1022)\r\n\tat common.Keywords.clickElement(Keywords.java:32)\r\n\tat pages.AdidasWeb.MenuPage.clickMenuOption(MenuPage.java:33)\r\n\tat steps.AdidasWeb.MenuSteps.clickOnMenu(MenuSteps.java:12)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\r\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n\tat java.lang.reflect.Method.invoke(Method.java:498)\r\n\tat io.cucumber.java.Invoker.invoke(Invoker.java:27)\r\n\tat io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:27)\r\n\tat io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)\r\n\tat io.cucumber.core.runner.TestStep.executeStep(TestStep.java:64)\r\n\tat io.cucumber.core.runner.TestStep.run(TestStep.java:49)\r\n\tat io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:46)\r\n\tat io.cucumber.core.runner.TestCase.run(TestCase.java:51)\r\n\tat io.cucumber.core.runner.Runner.runPickle(Runner.java:66)\r\n\tat io.cucumber.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:149)\r\n\tat io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:83)\r\n\tat io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:24)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:363)\r\n\tat io.cucumber.junit.CucumberSerenityRunner.runChild(CucumberSerenityRunner.java:227)\r\n\tat io.cucumber.junit.CucumberSerenityRunner.runChild(CucumberSerenityRunner.java:54)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)\r\n\tat io.cucumber.junit.CucumberSerenityRunner$RunCucumber.evaluate(CucumberSerenityRunner.java:254)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:363)\r\n\tat org.junit.runner.JUnitCore.run(JUnitCore.java:137)\r\n\tat com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)\r\n\tat com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:33)\r\n\tat com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:220)\r\n\tat com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:53)\r\n",
-              "duration": 1212493000000,
-              "status": "failed"
+              "duration": 1417000000,
+              "status": "passed"
             },
             "line": 12,
-            "name": "Customer clicks on \"Home\" menu",
+            "name": "User makes a GET request to get all the pets with \"sold\" status",
             "match": {
               "arguments": [
                 {
-                  "val": "Home",
-                  "offset": 20
+                  "val": "sold",
+                  "offset": 51
                 }
               ],
-              "location": "steps.AdidasWeb.MenuSteps.clickOnMenu(java.lang.String)"
+              "location": "steps.AdidasAPIs.GetAPISteps.userMakesAGETRequestToGetAllThePetsWithStatus(java.lang.String)"
             },
-            "keyword": "When "
+            "keyword": "And "
           },
           {
             "result": {
-              "duration": 16000000,
-              "status": "skipped"
+              "duration": 1000000,
+              "status": "passed"
             },
             "line": 13,
-            "name": "Customer clicks on \"Laptops\" product category",
+            "name": "User verify that pet \"PetAddedByRatika\" is in \"sold\" pets list",
             "match": {
               "arguments": [
                 {
-                  "val": "Laptops",
-                  "offset": 20
+                  "val": "PetAddedByRatika",
+                  "offset": 22
                 },
                 {
-                  "val": " category",
-                  "offset": 36
+                  "val": "is",
+                  "offset": 40
+                },
+                {
+                  "val": "sold",
+                  "offset": 47
                 }
               ],
-              "location": "steps.AdidasWeb.BrowseProductsSteps.browseProduct(java.lang.String,java.lang.String)"
+              "location": "steps.AdidasAPIs.GetAPISteps.userVerifyThatPetIsNotInPetsList(java.lang.String,java.lang.String,java.lang.String)"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 16000000,
-              "status": "skipped"
+              "duration": 9000000,
+              "status": "passed"
             },
             "line": 14,
-            "name": "Customer clicks on \"Dell i7 8gb\" product",
+            "name": "User makes a DELETE request to delete the pet \"PetAddedByRatika\"",
             "match": {
               "arguments": [
                 {
-                  "val": "Dell i7 8gb",
-                  "offset": 20
-                },
-                {
-                  "val": "",
-                  "offset": 40
+                  "val": "PetAddedByRatika",
+                  "offset": 47
                 }
               ],
-              "location": "steps.AdidasWeb.BrowseProductsSteps.browseProduct(java.lang.String,java.lang.String)"
+              "location": "steps.AdidasAPIs.DeleteAPISteps.userMakesADELETERequestToDeleteThePet(java.lang.String)"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 16000000,
-              "status": "skipped"
+              "duration": 1460000000,
+              "status": "passed"
             },
             "line": 15,
-            "name": "Customer navigates to the \"Dell i7 8gb\" product page",
+            "name": "User makes a GET request to get all the pets with \"avaialble\" status",
             "match": {
               "arguments": [
                 {
-                  "val": "Dell i7 8gb",
-                  "offset": 27
+                  "val": "avaialble",
+                  "offset": 51
                 }
               ],
-              "location": "steps.AdidasWeb.ProductSteps.customerNavigatesToTheProductPage(java.lang.String)"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 24000000,
-              "status": "skipped"
-            },
-            "line": 16,
-            "name": "Customer adds the products to the cart",
-            "match": {
-              "location": "steps.AdidasWeb.ProductSteps.customerAddsTheProductsToTheCart()"
+              "location": "steps.AdidasAPIs.GetAPISteps.userMakesAGETRequestToGetAllThePetsWithStatus(java.lang.String)"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 24000000,
-              "status": "skipped"
+              "duration": 2000000,
+              "status": "passed"
             },
-            "line": 17,
-            "name": "Customer accepts the confirmation alert",
+            "line": 16,
+            "name": "User verify that pet \"PetAddedByRatika\" is not in \"available\" pets list",
             "match": {
-              "location": "steps.AdidasWeb.ProductSteps.customerAcceptsTheConfirmationAlert()"
+              "arguments": [
+                {
+                  "val": "PetAddedByRatika",
+                  "offset": 22
+                },
+                {
+                  "val": "is not",
+                  "offset": 40
+                },
+                {
+                  "val": "available",
+                  "offset": 51
+                }
+              ],
+              "location": "steps.AdidasAPIs.GetAPISteps.userVerifyThatPetIsNotInPetsList(java.lang.String,java.lang.String,java.lang.String)"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 16000000,
-              "status": "skipped"
+              "duration": 1427000000,
+              "status": "passed"
             },
-            "line": 18,
-            "name": "Customer clicks on \"Cart\" menu",
+            "line": 17,
+            "name": "User makes a GET request to get all the pets with \"sold\" status",
             "match": {
               "arguments": [
                 {
-                  "val": "Cart",
-                  "offset": 20
+                  "val": "sold",
+                  "offset": 51
                 }
               ],
-              "location": "steps.AdidasWeb.MenuSteps.clickOnMenu(java.lang.String)"
+              "location": "steps.AdidasAPIs.GetAPISteps.userMakesAGETRequestToGetAllThePetsWithStatus(java.lang.String)"
             },
-            "keyword": "When "
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "User verify that pet \"PetAddedByRatika\" is not in \"sold\" pets list",
+            "match": {
+              "arguments": [
+                {
+                  "val": "PetAddedByRatika",
+                  "offset": 22
+                },
+                {
+                  "val": "is not",
+                  "offset": 40
+                },
+                {
+                  "val": "sold",
+                  "offset": 51
+                }
+              ],
+              "location": "steps.AdidasAPIs.GetAPISteps.userVerifyThatPetIsNotInPetsList(java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
           }
         ],
         "tags": [
           {
-            "name": "@web"
+            "name": "@api"
           }
         ]
       }
     ],
-    "name": "Purchase Product",
+    "name": "Get, Create, update and delete Pets using APIs",
     "description": "",
-    "id": "purchase-product",
+    "id": "get--create--update-and-delete-pets-using-apis",
     "keyword": "Feature",
-    "uri": "file:src/test/resources/features/PurchaseProduct.feature",
+    "uri": "file:src/test/resources/features/PetsCRUD.feature",
     "tags": [
       {
-        "name": "@web",
+        "name": "@api",
         "type": "Tag",
         "location": {
           "line": 1,
